@@ -34,6 +34,7 @@ namespace program2
                     FindMax(numberList, n);
                     Console.Write("数组的最小值是：");
                     FindMin(numberList, n);
+                    Console.ReadLine();
                 }
                 catch
                 {
