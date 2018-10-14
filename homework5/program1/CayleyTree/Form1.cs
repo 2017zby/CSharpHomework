@@ -21,16 +21,17 @@ namespace CayleyTree
         {
             
             double th = double .Parse(textBox2.Text);
-            
+            string colour = textBox1.Text;
+
             if (graphics == null)
             { graphics = this.CreateGraphics();
-              drawCayleyTree(10, 300, 350, 70, th);
+              drawCayleyTree(10, 300, 350, 70, th,colour);
             }
             else
                 {
-               
+                this.Refresh();
                 graphics = this.CreateGraphics();
-                drawCayleyTree(10, 300, 350, 70, th);
+                drawCayleyTree(10, 300, 350, 70, th,colour);
 
             }
             
@@ -44,7 +45,7 @@ namespace CayleyTree
         double th2 = 20 * Math.PI / 180;
 
         void drawCayleyTree(int n,
-                double x0, double y0, double leng, double th)
+                double x0, double y0, double leng, double th,string colour)
         {
             if (n == 0) return;
             double per1 = double.Parse(textBox3.Text);
@@ -54,17 +55,36 @@ namespace CayleyTree
 
             double x2 = x0 + 1.2*leng * Math.Cos(th);
             double y2 = y0 + 1.2 * leng * Math.Sin(th);
-            drawLine(x0, y0, x1, y1);
+            drawLine(x0, y0, x1, y1,colour);
 
-            drawCayleyTree(n - 1, x1, y1, per1 * leng, th + th1);
-            drawCayleyTree(n - 1, x2, y2, per2 * 1.2*leng, th - th2);
+            drawCayleyTree(n - 1, x1, y1, per1 * leng, th + th1,colour);
+            drawCayleyTree(n - 1, x2, y2, per2 * 1.2*leng, th - th2,colour);
         }
-        void drawLine(double x0, double y0, double x1, double y1)
+        void drawLine(double x0, double y0, double x1, double y1,string colour )
         {
-          
-            graphics.DrawLine(
-                Pens.Blue,
-                (int)x0, (int)y0, (int)x1, (int)y1);
+            
+            switch (colour)
+            {
+                case "Blue":
+                    graphics.DrawLine( Pens.Blue,(int)x0, (int)y0, (int)x1, (int)y1);
+                    break;
+                case "Red":
+                    graphics.DrawLine(Pens.Red, (int)x0, (int)y0, (int)x1, (int)y1);
+                    break;
+                case "MistyRose":
+                    graphics.DrawLine(Pens.MistyRose, (int)x0, (int)y0, (int)x1, (int)y1);
+                    break;
+                case "Olive":
+                    graphics.DrawLine(Pens.Olive, (int)x0, (int)y0, (int)x1, (int)y1);
+                    break;
+                case "Orange":
+                    graphics.DrawLine(Pens.Orange, (int)x0, (int)y0, (int)x1, (int)y1);
+                    break;
+
+
+            }
+                
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
