@@ -20,8 +20,9 @@ namespace CayleyTree
         private void button1_Click(object sender, EventArgs e)
         {
             
-            double th = double .Parse(textBox2.Text);
-            string colour = textBox1.Text;
+            double th = -double.Parse(comboBox4.Text);
+            //string colour = textBox1.Text;
+            string colour = comboBox1.Text;
 
             if (graphics == null)
             { graphics = this.CreateGraphics();
@@ -48,8 +49,8 @@ namespace CayleyTree
                 double x0, double y0, double leng, double th,string colour)
         {
             if (n == 0) return;
-            double per1 = double.Parse(textBox3.Text);
-            double per2 = double.Parse(textBox4.Text);
+            double per1 = double.Parse(comboBox2.Text);
+            double per2 = double.Parse(comboBox3.Text);
             double x1 = x0 + leng * Math.Cos(th);
             double y1 = y0 + leng * Math.Sin(th);
 
@@ -71,8 +72,8 @@ namespace CayleyTree
                 case "Red":
                     graphics.DrawLine(Pens.Red, (int)x0, (int)y0, (int)x1, (int)y1);
                     break;
-                case "MistyRose":
-                    graphics.DrawLine(Pens.MistyRose, (int)x0, (int)y0, (int)x1, (int)y1);
+                case "LightSeaGreen":
+                    graphics.DrawLine(Pens.LightSeaGreen, (int)x0, (int)y0, (int)x1, (int)y1);
                     break;
                 case "Olive":
                     graphics.DrawLine(Pens.Olive, (int)x0, (int)y0, (int)x1, (int)y1);
@@ -123,6 +124,16 @@ namespace CayleyTree
         }
 
         private void textBox4_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
