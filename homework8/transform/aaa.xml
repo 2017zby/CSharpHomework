@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="catalog.xsl"?>
+
+<ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Order>
+    <numOfDetails>3</numOfDetails>
+    <orderTotalPrice>9534</orderTotalPrice>
+    <orderNumber>20161011777</orderNumber>
+    <customerName> 张步云</customerName>
+    <phoneNum>15827510616</phoneNum>
+    <orderDetails>
+      <OrderDetails>
+        <GoodName>可乐</GoodName>
+        <numberOfGoods>1500</numberOfGoods>
+        <price>3.5</price>
+        <totalPrice>5250</totalPrice>
+      </OrderDetails>
+      <OrderDetails>
+        <GoodName>鸡翅</GoodName>
+        <numberOfGoods>552</numberOfGoods>
+        <price>4.5</price>
+        <totalPrice>2484</totalPrice>
+      </OrderDetails>
+      <OrderDetails>
+        <GoodName>鸡腿</GoodName>
+        <numberOfGoods>300</numberOfGoods>
+        <price>6</price>
+        <totalPrice>1800</totalPrice>
+      </OrderDetails>
+    </orderDetails>
+  </Order>
+  
+  <Order>
+    <numOfDetails>2</numOfDetails>
+    <orderTotalPrice>1872.5</orderTotalPrice>
+    <orderNumber>20171011888</orderNumber>
+    <customerName>王二五</customerName>
+    <phoneNum>15827510617</phoneNum>
+    <orderDetails>
+      <OrderDetails>
+        <GoodName>凳子</GoodName>
+        <numberOfGoods>25</numberOfGoods>
+        <price>32.5</price>
+        <totalPrice>812.5</totalPrice>
+      </OrderDetails>
+      <OrderDetails>
+        <GoodName>公鸡</GoodName>
+        <numberOfGoods>20</numberOfGoods>
+        <price>53</price>
+        <totalPrice>1060</totalPrice>
+      </OrderDetails>
+    </orderDetails>
+  </Order>
+  
+  <Order>
+    <numOfDetails>3</numOfDetails>
+    <orderTotalPrice>19138</orderTotalPrice>
+    <orderNumber>20181011999</orderNumber>
+    <customerName>罗修远</customerName>
+    <phoneNum>15827510618</phoneNum>
+    <orderDetails>
+      <OrderDetails>
+        <GoodName>鸡腿</GoodName>
+        <numberOfGoods>330</numberOfGoods>
+        <price>6.6</price>
+        <totalPrice>2178</totalPrice>
+      </OrderDetails>
+      <OrderDetails>
+        <GoodName>冰棍</GoodName>
+        <numberOfGoods>560</numberOfGoods>
+        <price>3.5</price>
+        <totalPrice>1960</totalPrice>
+      </OrderDetails>
+      <OrderDetails>
+        <GoodName>香蕉</GoodName>
+        <numberOfGoods>10000</numberOfGoods>
+        <price>1.5</price>
+        <totalPrice>15000</totalPrice>
+      </OrderDetails>
+    </orderDetails>
+  </Order>
+</ArrayOfOrder>
