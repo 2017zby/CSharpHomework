@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-stylesheet type="text/xsl" href="catalog.xsl"?>
-
+<?xml version="1.0"?>
 <ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Order>
     <numOfDetails>3</numOfDetails>
@@ -29,7 +27,6 @@
       </OrderDetails>
     </orderDetails>
   </Order>
-  
   <Order>
     <numOfDetails>2</numOfDetails>
     <orderTotalPrice>1872.5</orderTotalPrice>
@@ -51,7 +48,6 @@
       </OrderDetails>
     </orderDetails>
   </Order>
-  
   <Order>
     <numOfDetails>3</numOfDetails>
     <orderTotalPrice>19138</orderTotalPrice>

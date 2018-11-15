@@ -7,9 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Orders;
-using System.Xml.Serialization;
+using System.Text.RegularExpressions;
 using System.IO;
+using System.Xml;
+using System.Xml.Xsl;
+using System.Xml.Serialization;
+using Orders;
+
 namespace homework7
 {
     public partial class Form1 : Form
@@ -77,14 +81,15 @@ namespace homework7
         private void button3_Click(object sender, EventArgs e)
         {
             DialogResult result = saveFileDialog1.ShowDialog();
-          
+
             if (result.Equals(DialogResult.OK))
             {
                 String fileName = saveFileDialog1.FileName;
-                
+
                 //orderService.Export(fileName);
                 Export(fileName);
             }
+           
         }
         //public void Export(string fileName)
         //{
@@ -94,23 +99,37 @@ namespace homework7
         //        xs.Serialize(fs, orderlist);
         //    }
         //}
-        public string Export()
-        {
-            DateTime time = System.DateTime.Now;
-            string fileName = "orders_" + time.Year + "_" + time.Month
-                + "_" + time.Day + "_" + time.Hour + "_" + time.Minute
-                + "_" + time.Second + ".xml";
-            Export(fileName);
-            return fileName;
-        }
+        //public string Export()
+        //{
+        //    DateTime time = System.DateTime.Now;
+        //    string fileName = "orders_" + time.Year + "_" + time.Month
+        //        + "_" + time.Day + "_" + time.Hour + "_" + time.Minute
+        //        + "_" + time.Second + ".xml";
+        //    Export(fileName);
+        //    return fileName;
+        //}
 
         public void Export(String fileName)
         {
-            XmlSerializer xs = new XmlSerializer(typeof(List<Order>));
-            using (FileStream fs = new FileStream(fileName, FileMode.Create))
-            {
-                xs.Serialize(fs, orderlist);
-            }
+   
+
+            XmlSerializer xmlser = new XmlSerializer(typeof(List<Order>));
+            FileStream fs = new FileStream(fileName, FileMode.Create);
+            xmlser.Serialize(fs, orderlist);
+            XmlDocument xDoc = new XmlDocument();
+            fs.Close();
+            xDoc.Load(fileName);
+            string file = $"{fileName}.html";
+            FileStream fs1 = new FileStream(file, FileMode.Create);
+            StreamWriter streamWriter = new StreamWriter(fs1, Encoding.Default);
+            StringWriter sw = new StringWriter();
+            XslCompiledTransform xslTrans = new XslCompiledTransform();
+            xslTrans.Load("..//..//..//transform.xslt");
+            xslTrans.Transform(xDoc.CreateNavigator(), new XsltArgumentList(), sw);
+            streamWriter.Write(sw);
+            streamWriter.Flush();
+            streamWriter.Close();
+            fs1.Close();
         }
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
