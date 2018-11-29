@@ -40,8 +40,8 @@ namespace Program1
 
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            ErrorForm er = new ErrorForm();
-            er.ShowDialog();
+          
+     
         }
 
         private void DetailForm_FormClosed(object sender, FormClosedEventArgs e)

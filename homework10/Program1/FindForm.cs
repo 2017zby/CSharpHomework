@@ -40,11 +40,11 @@ namespace Program1
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
             switch (comboBox1.SelectedItem)
             {
                 case "顾客姓名":
-                    var target1= orders.Where(a => a.customerName.Contains(textBox1.Text));
+                    var target1 = orders.Where(a => a.customerName.Contains(textBox1.Text));
                     bindingSource1.DataSource = target1;
                     Currentorders = new List<Order>();
                     foreach (var or in target1)
@@ -77,9 +77,9 @@ namespace Program1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex>=0&&e.ColumnIndex==4)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 4)
             {
-                DetailForm df = new DetailForm(Currentorders[e.RowIndex],this);
+                DetailForm df = new DetailForm(Currentorders[e.RowIndex], this);
                 this.Hide();
                 df.ShowDialog();
             }

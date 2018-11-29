@@ -75,12 +75,6 @@
     <Compile Include="DetailForm.Designer.cs">
       <DependentUpon>DetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ErrorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ErrorForm.Designer.cs">
-      <DependentUpon>ErrorForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="FindForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,9 +91,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DetailForm.resx">
       <DependentUpon>DetailForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ErrorForm.resx">
-      <DependentUpon>ErrorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindForm.resx">
       <DependentUpon>FindForm.cs</DependentUpon>
